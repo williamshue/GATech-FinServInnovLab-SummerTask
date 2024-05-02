@@ -21,14 +21,13 @@ def generate_filing_index(directory):
     with open('filings_index.json', 'w') as f:
         json.dump(result, f, indent=4)
 
-generate_filing_index('sec-edgar-filings')
+def sort_filing_index(file_path):
+    with open(file_path, 'r') as file:
+        data = json.load(file)
 
-file_path = 'filings_index.json'
+    sorted_data = {key: dict(sorted(values.items())) for key, values in data.items()}
 
-with open(file_path, 'r') as file:
-    data = json.load(file)
+    with open(file_path, 'w') as file:
+        json.dump(sorted_data, file, indent=4)
 
-sorted_data = {key: dict(sorted(values.items())) for key, values in data.items()}
 
-with open(file_path, 'w') as file:
-    json.dump(sorted_data, file, indent=4)

@@ -2,3 +2,4 @@ sec-edgar-filings
 tokens.py
 __pycache__
 path
+.gitignore
