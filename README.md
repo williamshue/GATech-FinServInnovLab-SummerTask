@@ -1,3 +1,5 @@
+# Received Task: April 25th 2024 at 7:42 PM
+
 # Financial Services Innovation Lab, Georgia Tech Programming Task for Summer Research
 
 1. I installed SEC Edgar Downloader via pip: pip install -U sec-edgar-downloader
