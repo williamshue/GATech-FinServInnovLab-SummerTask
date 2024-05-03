@@ -1,23 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>SEC 10-K Filing Visualization</title>
-  <script src="https://d3js.org/d3.v6.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Data</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-  <div id="chart"></div>
-  <script src="script.js"></script>
+
+<div id="plot"></div>
+
+<script>
+    // Fetch JSON data from file
+    fetch('data.json')
+        .then(response => response.json())
+        .then(jsonData => {
+            // Extracting years and stock prices from the JSON data
+            var years = Object.keys(jsonData['C1']);
+            var pricesC1 = years.map(year => parseFloat(jsonData['C1'][year]['stock_price'].replace('$', '')));
+            var pricesC2 = years.map(year => parseFloat(jsonData['C2'][year]['stock_price'].replace('$', '')));
+
+            // Plotting the data
+            var data = [
+                { x: years, y: pricesC1, type: 'scatter', mode: 'lines', name: 'C1' },
+                { x: years, y: pricesC2, type: 'scatter', mode: 'lines', name: 'C2' }
+            ];
+
+            var layout = {
+                title: 'Stock Prices Over Years',
+                xaxis: {
+                    title: 'Year'
+                },
+                yaxis: {
+                    title: 'Stock Price ($)'
+                }
+            };
+
+            Plotly.newPlot('plot', data, layout);
+        })
+        .catch(error => console.error('Error fetching data:', error));
+</script>
+
 </body>
 </html>
-
-<style>
-    .tooltip {
-      position: absolute;
-      text-align: center;
-      padding: 5px;
-      background: #f0f0f0;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      pointer-events: none;
-    }
-  </style>
