@@ -1026,6 +1026,571 @@
                     "Neutral Sentiment": 0.9350236058235168,
                     "Negative Sentiment": 0.011946086771786213
                 }
+            },
+            "2007": {
+                "Business Summary": {
+                    "Summary Text": "Xbox 360 video game console and games, Zune digital music and entertainment device, PC games, and software development tools.",
+                    "Positive Sentiment": 0.17528097331523895,
+                    "Neutral Sentiment": 0.8127325773239136,
+                    "Negative Sentiment": 0.01198641024529934
+                },
+                "Risk Summary": {
+                    "Summary Text": "Challenges to our business model may reduce revenues and operating margins.",
+                    "Positive Sentiment": 0.012328973039984703,
+                    "Neutral Sentiment": 0.4118351936340332,
+                    "Negative Sentiment": 0.5758358240127563
+                },
+                "Management Summary": {
+                    "Summary Text": "Revenue historically has fluctuated quarterly and has generally been the highest in the second quarter of our fiscal year.",
+                    "Positive Sentiment": 0.3632287383079529,
+                    "Neutral Sentiment": 0.6298056244850159,
+                    "Negative Sentiment": 0.006965660490095615
+                }
+            },
+            "2003": {
+                "Business Summary": {
+                    "Summary Text": "Revisions to segment reporting provide management with a comprehensive financial view of our key businesses.",
+                    "Positive Sentiment": 0.346016526222229,
+                    "Neutral Sentiment": 0.6472511291503906,
+                    "Negative Sentiment": 0.006732391193509102
+                },
+                "Risk Summary": {
+                    "Summary Text": "no data",
+                    "Positive Sentiment": 0.06734158098697662,
+                    "Neutral Sentiment": 0.5970473885536194,
+                    "Negative Sentiment": 0.335610955953598
+                },
+                "Management Summary": {
+                    "Summary Text": "Revenue growth rate was 10% in fiscal 2001, 12% in fiscal 2002, and 13% in fiscal 2003.",
+                    "Positive Sentiment": 0.384245902299881,
+                    "Neutral Sentiment": 0.6096227765083313,
+                    "Negative Sentiment": 0.0061312951147556305
+                }
+            },
+            "2023": {
+                "Business Summary": {
+                    "Summary Text": "Forward-looking statements may appear throughout this report, including the following sections: Business (Part I, Item 1A of this Form 10-K), Risk Factors (Part I, Item 1B of this Form 10-K), and Managements Discussion and Analysis of Financial Condition and Results of Operations (Part II, Item",
+                    "Positive Sentiment": 0.0330265536904335,
+                    "Neutral Sentiment": 0.9058113098144531,
+                    "Negative Sentiment": 0.061162132769823074
+                },
+                "Risk Summary": {
+                    "Summary Text": "Risks and uncertainties include, but are not limited to:",
+                    "Positive Sentiment": 0.01945863664150238,
+                    "Neutral Sentiment": 0.6062161326408386,
+                    "Negative Sentiment": 0.3743252456188202
+                },
+                "Management Summary": {
+                    "Summary Text": "Managements Discussion and Analysis of Financial Condition and Results of Operations.",
+                    "Positive Sentiment": 0.03702924773097038,
+                    "Neutral Sentiment": 0.8615742921829224,
+                    "Negative Sentiment": 0.10139644145965576
+                }
+            },
+            "2018": {
+                "Business Summary": {
+                    "Summary Text": "Forward-looking statements may appear throughout this report, including the following sections: Business (Part I, Item 1A of this Form 10-K), Risk Factors (Part I, Item 1B of this Form 10-K), and Managements Discussion and Analysis of Financial Condition and Results of Operations (Part II, Item",
+                    "Positive Sentiment": 0.0330265536904335,
+                    "Neutral Sentiment": 0.9058113098144531,
+                    "Negative Sentiment": 0.061162132769823074
+                },
+                "Risk Summary": {
+                    "Summary Text": "Risks and uncertainties include, but are not limited to:",
+                    "Positive Sentiment": 0.01945863664150238,
+                    "Neutral Sentiment": 0.6062161326408386,
+                    "Negative Sentiment": 0.3743252456188202
+                },
+                "Management Summary": {
+                    "Summary Text": "Financial highlights from fiscal year 2018 compared with fiscal year 2017.",
+                    "Positive Sentiment": 0.08050601184368134,
+                    "Neutral Sentiment": 0.8973389267921448,
+                    "Negative Sentiment": 0.02215505577623844
+                }
+            },
+            "2095": {
+                "Business Summary": {
+                    "Summary Text": "Company Description: Microsoft develops, manufactures, sells, and supports a wide range of software products.",
+                    "Positive Sentiment": 0.6322442889213562,
+                    "Neutral Sentiment": 0.36162760853767395,
+                    "Negative Sentiment": 0.0061280932277441025
+                },
+                "Risk Summary": {
+                    "Summary Text": "no data",
+                    "Positive Sentiment": 0.06734158098697662,
+                    "Neutral Sentiment": 0.5970473885536194,
+                    "Negative Sentiment": 0.335610955953598
+                },
+                "Management Summary": {
+                    "Summary Text": "Net revenues grew 24% in the fiscal year ended June 30, 1994 and 28% in the fiscal year 1995.",
+                    "Positive Sentiment": 0.3915020227432251,
+                    "Neutral Sentiment": 0.6031888127326965,
+                    "Negative Sentiment": 0.005309245549142361
+                }
+            }
+        }
+    },
+    "AMZN": {
+        "Year": "2003",
+        "Details": {
+            "2003": {
+                "Business Summary": {
+                    "Summary Text": "Annual Report on Form 10-K for the year ended December 31, 2007 filed with the SEC",
+                    "Positive Sentiment": 0.019267886877059937,
+                    "Neutral Sentiment": 0.9406733512878418,
+                    "Negative Sentiment": 0.04005871340632439
+                },
+                "Risk Summary": {
+                    "Summary Text": "no data",
+                    "Positive Sentiment": 0.06734158098697662,
+                    "Neutral Sentiment": 0.5970473885536194,
+                    "Negative Sentiment": 0.335610955953598
+                },
+                "Management Summary": {
+                    "Summary Text": "Managements Discussion and Analysis of Financial Condition and Results of Operations",
+                    "Positive Sentiment": 0.0335594043135643,
+                    "Neutral Sentiment": 0.8778498768806458,
+                    "Negative Sentiment": 0.08859072625637054
+                }
+            },
+            "2008": {
+                "Business Summary": {
+                    "Summary Text": "Annual Report on Form 10-K for the year ended December 31, 2014 filed with the Securities and Exchange Commission",
+                    "Positive Sentiment": 0.01630273275077343,
+                    "Neutral Sentiment": 0.900694727897644,
+                    "Negative Sentiment": 0.08300251513719559
+                },
+                "Risk Summary": {
+                    "Summary Text": "Competition may intensify as our competitors enter into business combinations or alliances.",
+                    "Positive Sentiment": 0.18285056948661804,
+                    "Neutral Sentiment": 0.7928304672241211,
+                    "Negative Sentiment": 0.024318963289260864
+                },
+                "Management Summary": {
+                    "Summary Text": "Managements Discussion and Analysis of Financial Condition and Results of Operations.",
+                    "Positive Sentiment": 0.03702924773097038,
+                    "Neutral Sentiment": 0.8615742921829224,
+                    "Negative Sentiment": 0.10139644145965576
+                }
+            },
+            "2004": {
+                "Business Summary": {
+                    "Summary Text": "Annual Report on Form 10-K filed with the Securities and Exchange Commission",
+                    "Positive Sentiment": 0.01887497305870056,
+                    "Neutral Sentiment": 0.8967296481132507,
+                    "Negative Sentiment": 0.08439541608095169
+                },
+                "Risk Summary": {
+                    "Summary Text": "no data",
+                    "Positive Sentiment": 0.06734158098697662,
+                    "Neutral Sentiment": 0.5970473885536194,
+                    "Negative Sentiment": 0.335610955953598
+                },
+                "Management Summary": {
+                    "Summary Text": "Financial focus is on sustainable growth in free cash flow.",
+                    "Positive Sentiment": 0.6142380237579346,
+                    "Neutral Sentiment": 0.38002222776412964,
+                    "Negative Sentiment": 0.005739760585129261
+                }
+            },
+            "2007": {
+                "Business Summary": {
+                    "Summary Text": "Annual Report on Form 10-K for the year ended December 31, 2018",
+                    "Positive Sentiment": 0.021864209324121475,
+                    "Neutral Sentiment": 0.9366423487663269,
+                    "Negative Sentiment": 0.04149340093135834
+                },
+                "Risk Summary": {
+                    "Summary Text": "We face Intense Competition, Expansion, and Fluctuations in our operating results and growth rate.",
+                    "Positive Sentiment": 0.11687309294939041,
+                    "Neutral Sentiment": 0.6976940035820007,
+                    "Negative Sentiment": 0.18543291091918945
+                },
+                "Management Summary": {
+                    "Summary Text": "Annual Report on Form 10-K includes forward-looking statements.",
+                    "Positive Sentiment": 0.03080637753009796,
+                    "Neutral Sentiment": 0.9113674759864807,
+                    "Negative Sentiment": 0.05782618373632431
+                }
+            },
+            "2013": {
+                "Business Summary": {
+                    "Summary Text": "Annual Report on Form 10-K for the year ended December 31, 2018 filed with the U.S. Securities and Exchange Commission",
+                    "Positive Sentiment": 0.01576274074614048,
+                    "Neutral Sentiment": 0.9056307077407837,
+                    "Negative Sentiment": 0.07860656827688217
+                },
+                "Risk Summary": {
+                    "Summary Text": "We face intense competition from a growing number of competitors.",
+                    "Positive Sentiment": 0.032180629670619965,
+                    "Neutral Sentiment": 0.44164612889289856,
+                    "Negative Sentiment": 0.5261732339859009
+                },
+                "Management Summary": {
+                    "Summary Text": "Managements Discussion and Analysis of Financial Condition and Results of Operations.",
+                    "Positive Sentiment": 0.03702924773097038,
+                    "Neutral Sentiment": 0.8615742921829224,
+                    "Negative Sentiment": 0.10139644145965576
+                }
+            },
+            "2012": {
+                "Business Summary": {
+                    "Summary Text": "Managements Discussion and Analysis of Financial Condition and Results of Operations.",
+                    "Positive Sentiment": 0.03702924773097038,
+                    "Neutral Sentiment": 0.8615742921829224,
+                    "Negative Sentiment": 0.10139644145965576
+                },
+                "Risk Summary": {
+                    "Summary Text": "We face intense competition from a growing number of competitors.",
+                    "Positive Sentiment": 0.032180629670619965,
+                    "Neutral Sentiment": 0.44164612889289856,
+                    "Negative Sentiment": 0.5261732339859009
+                },
+                "Management Summary": {
+                    "Summary Text": "Managements Discussion and Analysis of Financial Condition and Results of Operations.",
+                    "Positive Sentiment": 0.03702924773097038,
+                    "Neutral Sentiment": 0.8615742921829224,
+                    "Negative Sentiment": 0.10139644145965576
+                }
+            },
+            "2020": {
+                "Business Summary": {
+                    "Summary Text": "Financial results of Whole Foods Market have been included in our consolidated financial statements from the date of acquisition.",
+                    "Positive Sentiment": 0.11873647570610046,
+                    "Neutral Sentiment": 0.876142144203186,
+                    "Negative Sentiment": 0.005121415015310049
+                },
+                "Risk Summary": {
+                    "Summary Text": "Risks and uncertainties include, but are not limited to, the following:",
+                    "Positive Sentiment": 0.01915101893246174,
+                    "Neutral Sentiment": 0.5984508395195007,
+                    "Negative Sentiment": 0.3823981285095215
+                },
+                "Management Summary": {
+                    "Summary Text": "Annual Report on Form 10-K contains forward-looking statements.",
+                    "Positive Sentiment": 0.027967985719442368,
+                    "Neutral Sentiment": 0.881547749042511,
+                    "Negative Sentiment": 0.09048426896333694
+                }
+            },
+            "2015": {
+                "Business Summary": {
+                    "Summary Text": "Annual Report on Form 10-K filed with the Securities and Exchange Commission",
+                    "Positive Sentiment": 0.01887497305870056,
+                    "Neutral Sentiment": 0.8967296481132507,
+                    "Negative Sentiment": 0.08439541608095169
+                },
+                "Risk Summary": {
+                    "Summary Text": "Online retail, e-commerce services, digital content and electronic devices, and web and infrastructure computing services.",
+                    "Positive Sentiment": 0.2199079692363739,
+                    "Neutral Sentiment": 0.7627755403518677,
+                    "Negative Sentiment": 0.017316551879048347
+                },
+                "Management Summary": {
+                    "Summary Text": "Managements Discussion and Analysis of Financial Condition and Results of Operations.",
+                    "Positive Sentiment": 0.03702924773097038,
+                    "Neutral Sentiment": 0.8615742921829224,
+                    "Negative Sentiment": 0.10139644145965576
+                }
+            },
+            "2006": {
+                "Business Summary": {
+                    "Summary Text": "Annual Report on Form 10-K filed with the Securities and Exchange Commission",
+                    "Positive Sentiment": 0.01887497305870056,
+                    "Neutral Sentiment": 0.8967296481132507,
+                    "Negative Sentiment": 0.08439541608095169
+                },
+                "Risk Summary": {
+                    "Summary Text": "Risks and uncertainties include, but are not limited to:",
+                    "Positive Sentiment": 0.01945863664150238,
+                    "Neutral Sentiment": 0.6062161326408386,
+                    "Negative Sentiment": 0.3743252456188202
+                },
+                "Management Summary": {
+                    "Summary Text": "Forward-looking statements involve known and unknown risks, uncertainties and other factors that may cause our actual results to differ materially.",
+                    "Positive Sentiment": 0.01748575270175934,
+                    "Neutral Sentiment": 0.67795729637146,
+                    "Negative Sentiment": 0.3045569360256195
+                }
+            },
+            "2018": {
+                "Business Summary": {
+                    "Summary Text": "Financial results of Whole Foods Market have been included in our consolidated financial statements from the date of acquisition.",
+                    "Positive Sentiment": 0.11873647570610046,
+                    "Neutral Sentiment": 0.876142144203186,
+                    "Negative Sentiment": 0.005121415015310049
+                },
+                "Risk Summary": {
+                    "Summary Text": "Factors that could cause actual results to differ materially from expectations include, but are not limited to:",
+                    "Positive Sentiment": 0.014222602359950542,
+                    "Neutral Sentiment": 0.583977460861206,
+                    "Negative Sentiment": 0.4017999470233917
+                },
+                "Management Summary": {
+                    "Summary Text": "Annual Report on Form 10-K contains forward-looking statements.",
+                    "Positive Sentiment": 0.027967985719442368,
+                    "Neutral Sentiment": 0.881547749042511,
+                    "Negative Sentiment": 0.09048426896333694
+                }
+            },
+            "2000": {
+                "Business Summary": {
+                    "Summary Text": "Management's Discussion and Analysis of Financial Condition and Results of Operations.",
+                    "Positive Sentiment": 0.03172939270734787,
+                    "Neutral Sentiment": 0.8567726612091064,
+                    "Negative Sentiment": 0.1114978939294815
+                },
+                "Risk Summary": {
+                    "Summary Text": "no data",
+                    "Positive Sentiment": 0.06734158098697662,
+                    "Neutral Sentiment": 0.5970473885536194,
+                    "Negative Sentiment": 0.335610955953598
+                },
+                "Management Summary": {
+                    "Summary Text": "Annual Report on Form 10-K for the year ended December 31, 1997 filed with the Securities and Exchange Commission",
+                    "Positive Sentiment": 0.016320593655109406,
+                    "Neutral Sentiment": 0.9024322032928467,
+                    "Negative Sentiment": 0.08124716579914093
+                }
+            },
+            "2022": {
+                "Business Summary": {
+                    "Summary Text": "Annual Report on Form 10-K for the year ended December 31, 2018",
+                    "Positive Sentiment": 0.021864209324121475,
+                    "Neutral Sentiment": 0.9366423487663269,
+                    "Negative Sentiment": 0.04149340093135834
+                },
+                "Risk Summary": {
+                    "Summary Text": "Pandemic, global economic climate and additional or unforeseen circumstances, developments, or events may give rise to or amplify many of the risks discussed below.",
+                    "Positive Sentiment": 0.012041140347719193,
+                    "Neutral Sentiment": 0.4643321633338928,
+                    "Negative Sentiment": 0.5236266851425171
+                },
+                "Management Summary": {
+                    "Summary Text": "Managements Discussion and Analysis of Financial Condition and Results of Operations.",
+                    "Positive Sentiment": 0.03702924773097038,
+                    "Neutral Sentiment": 0.8615742921829224,
+                    "Negative Sentiment": 0.10139644145965576
+                }
+            },
+            "2010": {
+                "Business Summary": {
+                    "Summary Text": "Managements Discussion and Analysis of Financial Condition and Results of Operations.",
+                    "Positive Sentiment": 0.03702924773097038,
+                    "Neutral Sentiment": 0.8615742921829224,
+                    "Negative Sentiment": 0.10139644145965576
+                },
+                "Risk Summary": {
+                    "Summary Text": "Risks and uncertainties include, but are not limited to:",
+                    "Positive Sentiment": 0.01945863664150238,
+                    "Neutral Sentiment": 0.6062161326408386,
+                    "Negative Sentiment": 0.3743252456188202
+                },
+                "Management Summary": {
+                    "Summary Text": "Managements Discussion and Analysis of Financial Condition and Results of Operations.",
+                    "Positive Sentiment": 0.03702924773097038,
+                    "Neutral Sentiment": 0.8615742921829224,
+                    "Negative Sentiment": 0.10139644145965576
+                }
+            },
+            "2009": {
+                "Business Summary": {
+                    "Summary Text": "Management\u2019s Discussion and Analysis of Financial Condition and Results of Operations.",
+                    "Positive Sentiment": 0.044040556997060776,
+                    "Neutral Sentiment": 0.8417593836784363,
+                    "Negative Sentiment": 0.11420001089572906
+                },
+                "Risk Summary": {
+                    "Summary Text": "Risks and uncertainties include, but are not limited to:",
+                    "Positive Sentiment": 0.01945863664150238,
+                    "Neutral Sentiment": 0.6062161326408386,
+                    "Negative Sentiment": 0.3743252456188202
+                },
+                "Management Summary": {
+                    "Summary Text": "Forward-looking statements involve known and unknown risks, uncertainties and other factors, some of which are beyond our control.",
+                    "Positive Sentiment": 0.02050171233713627,
+                    "Neutral Sentiment": 0.48640140891075134,
+                    "Negative Sentiment": 0.4930969178676605
+                }
+            },
+            "2011": {
+                "Business Summary": {
+                    "Summary Text": "Annual Report on Form 10-K filed with the U.S. Securities and Exchange Commission",
+                    "Positive Sentiment": 0.01797214336693287,
+                    "Neutral Sentiment": 0.9056649804115295,
+                    "Negative Sentiment": 0.07636280357837677
+                },
+                "Risk Summary": {
+                    "Summary Text": "Online retail, e-commerce, digital content and digital media devices, and web services.",
+                    "Positive Sentiment": 0.24335621297359467,
+                    "Neutral Sentiment": 0.7355942726135254,
+                    "Negative Sentiment": 0.02104954794049263
+                },
+                "Management Summary": {
+                    "Summary Text": "Annual Report on Form 10-K includes forward-looking statements.",
+                    "Positive Sentiment": 0.03080637753009796,
+                    "Neutral Sentiment": 0.9113674759864807,
+                    "Negative Sentiment": 0.05782618373632431
+                }
+            },
+            "2017": {
+                "Business Summary": {
+                    "Summary Text": "Management's Discussion and Analysis of Financial Condition and Results of Operations.",
+                    "Positive Sentiment": 0.03172939270734787,
+                    "Neutral Sentiment": 0.8567726612091064,
+                    "Negative Sentiment": 0.1114978939294815
+                },
+                "Risk Summary": {
+                    "Summary Text": "Factors that could cause actual results to differ materially from expectations include, but are not limited to:",
+                    "Positive Sentiment": 0.014222602359950542,
+                    "Neutral Sentiment": 0.583977460861206,
+                    "Negative Sentiment": 0.4017999470233917
+                },
+                "Management Summary": {
+                    "Summary Text": "Annual Report on Form 10-K contains forward-looking statements.",
+                    "Positive Sentiment": 0.027967985719442368,
+                    "Neutral Sentiment": 0.881547749042511,
+                    "Negative Sentiment": 0.09048426896333694
+                }
+            },
+            "2021": {
+                "Business Summary": {
+                    "Summary Text": "Amazon.com, Inc., formerly known as Amazon.com, Inc., is an online retailer that serves consumers, sellers, developers, and content creators.",
+                    "Positive Sentiment": 0.9091946482658386,
+                    "Neutral Sentiment": 0.08860893547534943,
+                    "Negative Sentiment": 0.002196403918787837
+                },
+                "Risk Summary": {
+                    "Summary Text": "Additional or unforeseen effects from the CO-19 pandemic and the global economic climate may give rise to or amplify many of the risks discussed below.",
+                    "Positive Sentiment": 0.016582215204834938,
+                    "Neutral Sentiment": 0.5765865445137024,
+                    "Negative Sentiment": 0.40683120489120483
+                },
+                "Management Summary": {
+                    "Summary Text": "Forward-looking statements involve known and unknown risks, uncertainties and other factors, some of which are beyond our control.",
+                    "Positive Sentiment": 0.02050171233713627,
+                    "Neutral Sentiment": 0.48640140891075134,
+                    "Negative Sentiment": 0.4930969178676605
+                }
+            },
+            "2005": {
+                "Business Summary": {
+                    "Summary Text": "Annual Report on Form 10-K for the year ended December 31, 2014 filed with the Securities and Exchange Commission",
+                    "Positive Sentiment": 0.01630273275077343,
+                    "Neutral Sentiment": 0.900694727897644,
+                    "Negative Sentiment": 0.08300251513719559
+                },
+                "Risk Summary": {
+                    "Summary Text": "no data",
+                    "Positive Sentiment": 0.06734158098697662,
+                    "Neutral Sentiment": 0.5970473885536194,
+                    "Negative Sentiment": 0.335610955953598
+                },
+                "Management Summary": {
+                    "Summary Text": "Forward-looking statements involve known and unknown risks, uncertainties and other factors that may cause our actual results to differ materially.",
+                    "Positive Sentiment": 0.01748575270175934,
+                    "Neutral Sentiment": 0.67795729637146,
+                    "Negative Sentiment": 0.3045569360256195
+                }
+            },
+            "1999": {
+                "Business Summary": {
+                    "Summary Text": "Web retailer offers more than 4.7 million book, music CD, video, DVD, computer game and other titles.",
+                    "Positive Sentiment": 0.4543161988258362,
+                    "Neutral Sentiment": 0.540841817855835,
+                    "Negative Sentiment": 0.004841919988393784
+                },
+                "Risk Summary": {
+                    "Summary Text": "no data",
+                    "Positive Sentiment": 0.06734158098697662,
+                    "Neutral Sentiment": 0.5970473885536194,
+                    "Negative Sentiment": 0.335610955953598
+                },
+                "Management Summary": {
+                    "Summary Text": "Annual Report on Form 10-K for the year ended December 31, 1998 filed with the Securities and Exchange Commission",
+                    "Positive Sentiment": 0.01618526503443718,
+                    "Neutral Sentiment": 0.9038459658622742,
+                    "Negative Sentiment": 0.07996868342161179
+                }
+            },
+            "2016": {
+                "Business Summary": {
+                    "Summary Text": "Annual Report on Form 10-K for the year ended December 31, 2014 filed with the Securities and Exchange Commission",
+                    "Positive Sentiment": 0.01630273275077343,
+                    "Neutral Sentiment": 0.900694727897644,
+                    "Negative Sentiment": 0.08300251513719559
+                },
+                "Risk Summary": {
+                    "Summary Text": "Online retail, e-commerce services, digital content and electronic devices, and web and infrastructure computing services.",
+                    "Positive Sentiment": 0.2199079692363739,
+                    "Neutral Sentiment": 0.7627755403518677,
+                    "Negative Sentiment": 0.017316551879048347
+                },
+                "Management Summary": {
+                    "Summary Text": "Managements Discussion and Analysis of Financial Condition and Results of Operations.",
+                    "Positive Sentiment": 0.03702924773097038,
+                    "Neutral Sentiment": 0.8615742921829224,
+                    "Negative Sentiment": 0.10139644145965576
+                }
+            },
+            "2023": {
+                "Business Summary": {
+                    "Summary Text": "Amazon.com, Inc. serves consumers, sellers, developers, enterprises, content creators, advertisers, and employees.",
+                    "Positive Sentiment": 0.9181918501853943,
+                    "Neutral Sentiment": 0.07839509099721909,
+                    "Negative Sentiment": 0.0034130990970879793
+                },
+                "Risk Summary": {
+                    "Summary Text": "Risks discussed below include, but are not limited to:",
+                    "Positive Sentiment": 0.017997315153479576,
+                    "Neutral Sentiment": 0.6365060210227966,
+                    "Negative Sentiment": 0.3454967141151428
+                },
+                "Management Summary": {
+                    "Summary Text": "Forward-looking statements involve known and unknown risks, uncertainties and other factors, some of which are beyond our control.",
+                    "Positive Sentiment": 0.02050171233713627,
+                    "Neutral Sentiment": 0.48640140891075134,
+                    "Negative Sentiment": 0.4930969178676605
+                }
+            },
+            "2019": {
+                "Business Summary": {
+                    "Summary Text": "Financial results of Whole Foods Market have been included in our consolidated financial statements from the date of acquisition.",
+                    "Positive Sentiment": 0.11873647570610046,
+                    "Neutral Sentiment": 0.876142144203186,
+                    "Negative Sentiment": 0.005121415015310049
+                },
+                "Risk Summary": {
+                    "Summary Text": "Factors that could cause actual results to differ materially from expectations include, but are not limited to:",
+                    "Positive Sentiment": 0.014222602359950542,
+                    "Neutral Sentiment": 0.583977460861206,
+                    "Negative Sentiment": 0.4017999470233917
+                },
+                "Management Summary": {
+                    "Summary Text": "Managements Discussion and Analysis of Financial Condition and Results of Operations.",
+                    "Positive Sentiment": 0.03702924773097038,
+                    "Neutral Sentiment": 0.8615742921829224,
+                    "Negative Sentiment": 0.10139644145965576
+                }
+            },
+            "2014": {
+                "Business Summary": {
+                    "Summary Text": "Managements Discussion and Analysis of Financial Condition and Results of Operations Information for supplemental information.",
+                    "Positive Sentiment": 0.033677373081445694,
+                    "Neutral Sentiment": 0.9205183386802673,
+                    "Negative Sentiment": 0.045804280787706375
+                },
+                "Risk Summary": {
+                    "Summary Text": "Online retail, e-commerce services, digital content and electronic devices, and web and infrastructure computing services.",
+                    "Positive Sentiment": 0.2199079692363739,
+                    "Neutral Sentiment": 0.7627755403518677,
+                    "Negative Sentiment": 0.017316551879048347
+                },
+                "Management Summary": {
+                    "Summary Text": "Managements Discussion and Analysis of Financial Condition and Results of Operations.",
+                    "Positive Sentiment": 0.03702924773097038,
+                    "Neutral Sentiment": 0.8615742921829224,
+                    "Negative Sentiment": 0.10139644145965576
+                }
             }
         }
     }
