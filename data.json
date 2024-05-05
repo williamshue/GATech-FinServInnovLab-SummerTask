@@ -1,0 +1,47 @@
+{
+    "AAPL": {
+        "Year": "2019",
+        "Details": {
+            "2019": {
+                "Business Summary": {
+                    "Summary Text": "Apple Inc. designs, manufactures and markets smartphones, personal computers, tablets, wearables and accessories.",
+                    "Positive Sentiment": 0.7330955266952515,
+                    "Neutral Sentiment": 0.2592414617538452,
+                    "Negative Sentiment": 0.007663032505661249
+                },
+                "Risk Summary": {
+                    "Summary Text": "Financial condition and operating results may be affected by a number of factors.",
+                    "Positive Sentiment": 0.019658531993627548,
+                    "Neutral Sentiment": 0.660728931427002,
+                    "Negative Sentiment": 0.3196125030517578
+                },
+                "Management Summary": {
+                    "Summary Text": "Annual Report on Form 10-K for the fiscal year ended September 29, 2018 filed with the Securities and Exchange Commission",
+                    "Positive Sentiment": 0.01663636416196823,
+                    "Neutral Sentiment": 0.9072616100311279,
+                    "Negative Sentiment": 0.07610198110342026
+                }
+            },
+            "1999": {
+                "Business Summary": {
+                    "Summary Text": "Departure of Directors or Certain Officers; Election of Directors or Sensitive Information",
+                    "Positive Sentiment": 0.028200000524520874,
+                    "Neutral Sentiment": 0.8702049851417542,
+                    "Negative Sentiment": 0.10159500688314438
+                },
+                "Risk Summary": {
+                    "Summary Text": "no data",
+                    "Positive Sentiment": 0.06734158098697662,
+                    "Neutral Sentiment": 0.5970473885536194,
+                    "Negative Sentiment": 0.335610955953598
+                },
+                "Management Summary": {
+                    "Summary Text": "The following table sets forth annual results of operations for fiscal years 1999 and 1998.",
+                    "Positive Sentiment": 0.027447909116744995,
+                    "Neutral Sentiment": 0.9317547082901001,
+                    "Negative Sentiment": 0.0407973937690258
+                }
+            }
+        }
+    }
+}

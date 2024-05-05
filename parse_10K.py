@@ -68,6 +68,4 @@ def parse_10k_filing(filepath, section):
         data = [mdaText]
     return(data)
 
-# Example usage
-result = parse_10k_filing('/Users/w/Documents/GATech-FinServInnovLab-SummerTask/sec-edgar-filings/META/10-K/0001326801-23-000013/full-submission.txt', 1)
-print(result)
+

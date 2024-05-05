@@ -2,73 +2,68 @@
 <html>
 <head>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<style>
+</style>
 </head>
 <body>
 
+<h1 style="width:100%;max-width:700px;margin:0 auto;color:grey;font-weight: 1%;">SEC 10-K Filings Insight Analysis Dashboard</h1>
 <div id="myPlot" style="width:100%;max-width:700px;margin:0 auto;"></div>
 <div id="info" style="width:100%;max-width:600px;margin:20px auto;border-radius:10px;border:2px solid #000;padding:10px;"></div>
 
 <script>
-const years = [1995, 1996, 1997, 1999];
-const stockPricesC1 = [10.25, 12.75, 15.50, 20.00];
-const stockPricesC2 = [10.25, 12.75, 15.50, 20.00];
-const eventsC1 = [
-    "1995: Launch of PowerBook 5300.",
-    "1996: Introduction of Macintosh Performa series.",
-    "1997: Launch of Power Macintosh G3.",
-    "1999: Unveiling of the iMac G3."
-];
-const eventsC2 = [
-    "1995: Launch of PowerBook 5300.",
-    "1996: Introduction of Macintosh Performa series.",
-    "1997: Launch of Power Macintosh G3.",
-    "1999: Unveiling of the iMac G3."
-];
+fetch('data.json')
+.then(response => response.json())
+.then(data => {
+    const years = Object.keys(data.C1);
+    const stockPricesC1 = years.map(year => parseFloat(data.C1[year].stock_price.replace('$', '')));
+    const stockPricesC2 = years.map(year => parseFloat(data.C2[year].stock_price.replace('$', '')));
+    const eventsC1 = years.map(year => `${year}: ${data.C1[year].text}`);
+    const eventsC2 = years.map(year => `${year}: ${data.C2[year].text}`);
 
-// Define Data
-const trace1 = {
-  x: years,
-  y: stockPricesC1,
-  mode: "lines+markers",
-  name: 'Company 1',
-  type: 'scatter'
-};
+    const trace1 = {
+      x: years,
+      y: stockPricesC1,
+      mode: "lines+markers",
+      name: 'Company 1',
+      type: 'scatter'
+    };
 
-const trace2 = {
-  x: years,
-  y: stockPricesC2,
-  mode: "lines+markers",
-  name: 'Company 2',
-  type: 'scatter'
-};
+    const trace2 = {
+      x: years,
+      y: stockPricesC2,
+      mode: "lines+markers",
+      name: 'Company 2',
+      type: 'scatter'
+    };
 
-const data = [trace1, trace2];
+    const dataPlot = [trace1, trace2];
 
-// Define Layout
-const layout = {
-  xaxis: {title: "Year"},
-  yaxis: {title: "Stock Price ($)"},  
-  title: "Stock Prices and Events by Year"
-};
+    const layout = {
+      xaxis: {title: "Year"},
+      yaxis: {title: "Stock Price ($)"},
+      title: "Stock Prices and Events by Year"
+    };
 
-// Plot
-Plotly.newPlot("myPlot", data, layout);
+    Plotly.newPlot("myPlot", dataPlot, layout);
 
-const plotDiv = document.getElementById('myPlot');
-plotDiv.on('plotly_hover', function(data){
-    const yearIndex = data.points[0].pointIndex;
-    const company = data.points[0].data.name;
-    let infoText = `<h2>${company}</h2>`;
-    if (company === "Company 1") {
-        infoText += `<p>${eventsC1[yearIndex]}</p>`;
-    } else {
-        infoText += `<p>${eventsC2[yearIndex]}</p>`;
-    }
-    document.getElementById('info').innerHTML = infoText;
+    const plotDiv = document.getElementById('myPlot');
+    plotDiv.on('plotly_hover', function(data){
+        const yearIndex = data.points[0].pointIndex;
+        const company = data.points[0].data.name;
+        let infoText = `<h2>${company}</h2>`;
+        if (company === "Company 1") {
+            infoText += `<p>${eventsC1[yearIndex]}</p>`;
+        } else {
+            infoText += `<p>${eventsC2[yearIndex]}</p>`;
+        }
+        document.getElementById('info').innerHTML = infoText;
+    })
+    .on('plotly_unhover', function(data){
+        document.getElementById('info').innerHTML = '';
+    });
 })
-.on('plotly_unhover', function(data){
-    document.getElementById('info').innerHTML = '';
-});
+.catch(error => console.error('Error loading the data:', error));
 </script>
 
 </body>
