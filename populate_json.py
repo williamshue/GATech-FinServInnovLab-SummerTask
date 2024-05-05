@@ -121,4 +121,4 @@ def popjson(root_dir):
             with open('data.json', 'w') as file:
                 json.dump(existing_data, file, indent=4)  # Using `indent` for a prettier output
             
-            os.remove(filepath)
+            os.remove(filepath) ## easier to know what's been processed when I hit usage cap
