@@ -1,4 +1,5 @@
-
+### THIS IS CODE WAS MODIFIED FROM: https://github.com/rsljr/edgarParser/blob/master/parse_10K.py 
+### I simply modified the code to take a locally downloaded sec filing rather than one from an https url, this is why it doesn't have many comments.
 
 import re
 import unicodedata

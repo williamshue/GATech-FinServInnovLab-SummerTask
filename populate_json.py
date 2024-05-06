@@ -5,14 +5,18 @@ import json
 import time
 import inf_api_caller 
 
+'''
+    Description: this file populates a json with with all the data from the downloaded sec filings
+    Input: the function takes the path to the directory containing the sec filings
+    Output: a file named data.json containing the processed data from the sec filings'''
 def popjson(root_dir):
-    for dirpath, dirnames, filenames in os.walk(root_dir):
+    for dirpath, dirnames, filenames in os.walk(root_dir): ## loop over all files in the directoy and sub dirs.
         for filename in filenames:
             filepath = os.path.join(dirpath, filename)
 
             ticker = filepath.split('/')[2]
 
-            year_str = filepath.split('-')[4]
+            year_str = filepath.split('-')[4] ## store the year for organizing in json
             year = int(year_str)
             if year >= 99:
                 year_str = "19" + year_str
@@ -20,8 +24,10 @@ def popjson(root_dir):
                 year_str = "20" + year_str
             year = year_str
 
-            # ## 0: all, 1: business description, 2: risk, 3: management discussion and analysis.
-            # ## overall_sum = get_summary(parse_10K.parse_10k_filing(filepath, 0))
+            ## parse_10k_filing is a parser I got from github, it proved very difficult for me to write my own parser quickly
+            ## inf_api_caller leverages hugging faces inference api to get a summary of the text, this was the LLM used: 
+            ## https://api-inference.huggingface.co/models/human-centered-summarization/financial-summarization-pegasus
+            ## 0: all, 1: business description, 2: risk, 3: management discussion and analysis. (params used for the parse_10k_filing call)
             try:
                 print(filepath)
                 biz_sum = inf_api_caller.get_summary(parse_10K.parse_10k_filing(filepath, 1))
@@ -39,9 +45,9 @@ def popjson(root_dir):
                 mgmt_sum = [{'summary_text': 'no data'}]
             print("here")
 
-            time.sleep(2)
+            time.sleep(2) ## needed to add sleep to wait for th API 
 
-            ## 0 -> Negative; 1 -> Neutral; 2 -> Positive
+            ## 0 -> Negative; 1 -> Neutral; 2 -> Positive ## these were the numbers associated with the sentiment of the labels
             print(biz_sum)
             try: 
                 biz_sentiment = inf_api_caller.get_sentiment(biz_sum[0]['summary_text'])
@@ -59,18 +65,14 @@ def popjson(root_dir):
                 time.sleep(2)
                 mgmt_sentiment = inf_api_caller.get_sentiment(mgmt_sum[0]['summary_text'])    
             
-        
-
-            # Load existing JSON data if available
             try:
-                with open('data.json', 'r') as file:
+                with open('data.json', 'r') as file: ## load an existing file or make a new one if it doesn't exist already
                     existing_data = json.load(file)
             except FileNotFoundError:
                 existing_data = {}
 
-            # Check if ticker already exists
+            ## update the summaries in the json file
             if ticker in existing_data:
-                # Add a new entry for the current year
                 existing_data[ticker]['Details'][str(year)] = {
                     'Business Summary': {
                         'Summary Text': biz_sum[0]['summary_text'],
@@ -92,8 +94,7 @@ def popjson(root_dir):
                     }
                 }
             else:
-                # Create a new entry for the ticker
-                existing_data[ticker] = {
+                existing_data[ticker] = { ## handle in the case where the company already has a submission
                     'Year': year,
                     'Details': {
                         str(year): {
@@ -119,8 +120,7 @@ def popjson(root_dir):
                     }
                 }
 
-            # Save the updated dictionary to a JSON file
             with open('data.json', 'w') as file:
-                json.dump(existing_data, file, indent=4)  # Using `indent` for a prettier output
+                json.dump(existing_data, file, indent=4)   ## finally write to the file
             
-            os.remove(filepath) ## easier to know what's been processed when I hit usage cap
+            os.remove(filepath) ## easier to know what's been processed when I hit usage cap ## delete original filings to avoid repeats

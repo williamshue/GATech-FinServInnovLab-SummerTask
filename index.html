@@ -13,9 +13,9 @@
          justify-content: center;
          align-items: center;
          flex-direction: column;
-         background-color: #f0f0f0; /* Light grey background */
+         background-color: #f0f0f0; 
          font-family: Helvetica, Arial, sans-serif;
-         font-weight: 300; /* Added font-weight for thin appearance */
+         font-weight: 300; 
      }
      .chart-container {
          width: 1000px;
@@ -33,7 +33,7 @@
      .summary-container h3 {
          font-size: 18px;
          margin: 0 0 5px;
-         font-weight: 400; /* Added font-weight for h3 */
+         font-weight: 400; 
      }
      .summary-container p {
          font-size: 16px;
@@ -46,23 +46,24 @@
    <h1>SEC 10-K Filings Insight Analysis Dashboard</h1>
    <div class="chart-container" id="sentimentChart"></div>
    <script>
-       document.addEventListener("DOMContentLoaded", function() {
+       document.addEventListener("DOMContentLoaded", function() { // listens for iteration with the webapp
            fetch('data.json')
                .then(response => response.json())
                .then(data => {
-                   const years = [];
+                   const years = []; // establishes way to store data which will be read in from the data.json file
                    const aaplCombined = [];
                    const msftCombined = [];
                    const amznCombined = [];
 
-                   // Define weights for each summary
                    const weights = {
-                       'Business Summary': 0.5,
+                       'Business Summary': 0.5, // establishes weights for calculating weighted average of positive sentiment
                        'Risk Summary': 0.3,
                        'Management Summary': 0.2
                    };
 
-                   // Calculate combined sentiment for each company and each year
+                   /*
+                    * this calculates the weighted sentiment for the companies, pulling from the json file 
+                    */
                    const calculateCombinedSentiment = (companyData) => {
                        const combinedData = [];
                        Object.keys(companyData).forEach(year => {
@@ -77,13 +78,12 @@
                        return combinedData;
                    };
 
-                   // Extracting combined sentiment data for Apple, Microsoft, Amazon
                    years.push(...Object.keys(data.AAPL));
                    aaplCombined.push(...calculateCombinedSentiment(data.AAPL));
                    msftCombined.push(...calculateCombinedSentiment(data.MSFT));
-                   amznCombined.push(...calculateCombinedSentiment(data.AMZN));
+                   amznCombined.push(...calculateCombinedSentiment(data.AMZN)); // update the arrays initialized above
 
-                   const trace1 = {
+                   const trace1 = { // establishes the dataset for each of the companies and how it will appear on the plot
                        x: years,
                        y: aaplCombined,
                        mode: 'lines+markers',
@@ -122,13 +122,12 @@
                       }
                    };
 
-                   Plotly.newPlot('sentimentChart', [trace1, trace2, trace3], layout);
+                   Plotly.newPlot('sentimentChart', [trace1, trace2, trace3], layout); // displays the plot using the plotly libraryd
 
-                   // Display 2023 summaries initially
                    const companies = ['AAPL', 'MSFT', 'AMZN'];
                    const summaryTypes = ['Business Summary', 'Risk Summary', 'Management Summary'];
 
-                   companies.forEach(company => {
+                   companies.forEach(company => { // when the page is first loaded populat the summary sections with the data from the latest year 2023
                        const container = document.getElementById(`${company.toLowerCase()}Summary`);
                        let summaries = '';
                        summaryTypes.forEach(summaryType => {
@@ -138,7 +137,7 @@
                        container.innerHTML = `<h3>${company} Summaries for 2023</h3>${summaries}`;
                    });
 
-                   // Update summary boxes on hover
+                   // when the user hover overs a given year update the textual summary sections to display the text from the given year
                    document.getElementById('sentimentChart').on('plotly_hover', function(eventData) {
                        const year = eventData.points[0].x;
                        companies.forEach((company, index) => {
@@ -153,8 +152,8 @@
                    });
                })
                .catch(error => console.error('Error loading the data:', error));
-       });
-   </script>
+       });// summary sections below 
+   </script> 
    <div class="summary-container" id="aaplSummary">
        Apple Summaries
    </div>
