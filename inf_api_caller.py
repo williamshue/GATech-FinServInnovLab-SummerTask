@@ -19,6 +19,10 @@ def get_summary(text):
 
 import requests
 
+'''
+    Description: the file takes a summary of the text form the sec filing and gives the sentiment of the text
+    Input: summarized text from the sec filing
+    Output: the sentiment of the summarized text'''
 def get_sentiment(text):
     API_URL = "https://api-inference.huggingface.co/models/cardiffnlp/twitter-roberta-base-sentiment"
     headers = {"Authorization": "Bearer " + tokens.TOKEN_1}
