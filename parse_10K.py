@@ -1,4 +1,4 @@
-## modified to handle local files from https://github.com/rsljr/edgarParser/blob/master/parse_10K.py 
+
 
 import re
 import unicodedata
@@ -67,5 +67,3 @@ def parse_10k_filing(filepath, section):
     elif section == 3:
         data = [mdaText]
     return(data)
-
-

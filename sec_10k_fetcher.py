@@ -7,9 +7,9 @@ def fetch_filings():
     
     # specify companies and tickers
     companies = {
-        "JPM": "JPMorgan Chase & Co.",
-        "MSFT": "Microsoft Corp",
-        "AAPL": "Apple Inc."
+        "AMZN": "Amazon.com Inc"
+        # "MSFT": "Microsoft Corp",
+        # "AAPL": "Apple Inc."
     }
 
     for ticker, _ in companies.items():

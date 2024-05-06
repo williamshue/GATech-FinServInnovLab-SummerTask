@@ -1,152 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEC 10-K Filings Insight Analysis Dashboard</title>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <style>
-      body, html {
-          height: 100%;
-          margin: 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-          background-color: #f0f0f0; /* Light grey background */
-          font-family: Helvetica, Arial, sans-serif;
-          font-weight: 300; /* Added font-weight for thin appearance */
-      }
-      .chart-container {
-          width: 1500px;
-          height: 1000px;
-      }
-      .summary-container {
-          border-radius: 25px;
-          border: 2px solid gray;
-          padding: 10px;
-          width: 1500px;
-          height: 150px;
-          overflow-y: auto;
-          margin-bottom: 10px;
-      }
-      .summary-container h3 {
-          font-size: 18px;
-          margin: 0 0 5px;
-          font-weight: 400; /* Added font-weight for h3 */
-      }
-      .summary-container p {
-          font-size: 16px;
-          margin: 0;
-      }
-  </style>
-  </style>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>SEC 10-K Filings Insight Analysis Dashboard</title>
+   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+   <style>
+     body, html {
+         height: 100%;
+         margin: 0;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         background-color: #f0f0f0; /* Light grey background */
+         font-family: Helvetica, Arial, sans-serif;
+         font-weight: 300; /* Added font-weight for thin appearance */
+     }
+     .chart-container {
+         width: 1000px;
+         height: 750px;
+     }
+     .summary-container {
+         border-radius: 25px;
+         border: 2px solid gray;
+         padding: 10px;
+         width: 1000px;
+         height: 200px;
+         overflow-y: auto;
+         margin-bottom: 10px;
+     }
+     .summary-container h3 {
+         font-size: 18px;
+         margin: 0 0 5px;
+         font-weight: 400; /* Added font-weight for h3 */
+     }
+     .summary-container p {
+         font-size: 16px;
+         margin: 0;
+     }
+ </style>
+ </style>
 </head>
 <body>
-    <h1>SEC 10-K Filings Insight Analysis Dashboard</h1>
-    <div class="chart-container" id="sentimentChart"></div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            fetch('data.json')
-                .then(response => response.json())
-                .then(data => {
-                    const years = [];
-                    const aaplCombined = [];
-                    const msftCombined = [];
-                    const amznCombined = [];
+   <h1>SEC 10-K Filings Insight Analysis Dashboard</h1>
+   <div class="chart-container" id="sentimentChart"></div>
+   <script>
+       document.addEventListener("DOMContentLoaded", function() {
+           fetch('data.json')
+               .then(response => response.json())
+               .then(data => {
+                   const years = [];
+                   const aaplCombined = [];
+                   const msftCombined = [];
+                   const amznCombined = [];
 
-                    // Define weights for each summary
-                    const weights = {
-                        'Business Summary': 0.5,
-                        'Risk Summary': 0.3,
-                        'Management Summary': 0.2
-                    };
+                   // Define weights for each summary
+                   const weights = {
+                       'Business Summary': 0.5,
+                       'Risk Summary': 0.3,
+                       'Management Summary': 0.2
+                   };
 
-                    // Calculate combined sentiment for each company and each year
-                    const calculateCombinedSentiment = (companyData) => {
-                        const combinedData = [];
-                        Object.keys(companyData).forEach(year => {
-                            const yearData = companyData[year];
-                            let combinedPositive = 0;
-                            Object.keys(yearData).forEach(summary => {
-                                const sentiment = yearData[summary];
-                                combinedPositive += sentiment['Positive Sentiment'] * weights[summary];
-                            });
-                            combinedData.push(combinedPositive);
-                        });
-                        return combinedData;
-                    };
+                   // Calculate combined sentiment for each company and each year
+                   const calculateCombinedSentiment = (companyData) => {
+                       const combinedData = [];
+                       Object.keys(companyData).forEach(year => {
+                           const yearData = companyData[year];
+                           let combinedPositive = 0;
+                           Object.keys(yearData).forEach(summary => {
+                               const sentiment = yearData[summary];
+                               combinedPositive += sentiment['Positive Sentiment'] * weights[summary];
+                           });
+                           combinedData.push(combinedPositive);
+                       });
+                       return combinedData;
+                   };
 
-                    // Extracting combined sentiment data for Apple, Microsoft, Amazon
-                    years.push(...Object.keys(data.AAPL));
-                    aaplCombined.push(...calculateCombinedSentiment(data.AAPL));
-                    msftCombined.push(...calculateCombinedSentiment(data.MSFT));
-                    amznCombined.push(...calculateCombinedSentiment(data.AMZN));
+                   // Extracting combined sentiment data for Apple, Microsoft, Amazon
+                   years.push(...Object.keys(data.AAPL));
+                   aaplCombined.push(...calculateCombinedSentiment(data.AAPL));
+                   msftCombined.push(...calculateCombinedSentiment(data.MSFT));
+                   amznCombined.push(...calculateCombinedSentiment(data.AMZN));
 
-                    const trace1 = {
-                        x: years,
-                        y: aaplCombined,
-                        mode: 'lines+markers',
-                        name: 'AAPL Combined Positive Sentiment',
-                        line: {color: 'rgb(255, 99, 132)'}
-                    };
+                   const trace1 = {
+                       x: years,
+                       y: aaplCombined,
+                       mode: 'lines+markers',
+                       name: 'AAPL Combined Positive Sentiment',
+                       line: {color: 'rgb(255, 99, 132)'}
+                   };
 
-                    const trace2 = {
-                        x: years,
-                        y: msftCombined,
-                        mode: 'lines+markers',
-                        name: 'MSFT Combined Positive Sentiment',
-                        line: {color: 'rgb(54, 162, 235)'}
-                    };
+                   const trace2 = {
+                       x: years,
+                       y: msftCombined,
+                       mode: 'lines+markers',
+                       name: 'MSFT Combined Positive Sentiment',
+                       line: {color: 'rgb(54, 162, 235)'}
+                   };
 
-                    const trace3 = {
-                        x: years,
-                        y: amznCombined,
-                        mode: 'lines+markers',
-                        name: 'AMZN Combined Positive Sentiment',
-                        line: {color: 'rgb(75, 192, 192)'}
-                    };
+                   const trace3 = {
+                       x: years,
+                       y: amznCombined,
+                       mode: 'lines+markers',
+                       name: 'AMZN Combined Positive Sentiment',
+                       line: {color: 'rgb(75, 192, 192)'}
+                   };
 
-                    const layout = {
-                        title: 'Weighted average of SEC 10-K Filing Summaries 1995-2023',
-                        xaxis: {
-                            title: 'Year'
-                        },
-                        yaxis: {
-                            title: 'Weighted average of Positive Sentiment for SEC 10-K Filing Summaries'
-                        }
-                    };
+                   const layout = {
+                       title: 'Weighted avg. of Pos. Sentiment for SEC 10-K Summaries 1995-2023',
+                       xaxis: {
+                           title: 'Year'
+                       },
+                       yaxis: {
+                           title: 'Weighted avg. of Pos. Sentiment for SEC 10-K Sum.'
+                       },
+                       legend: {
+                          title: {
+                            text: '*Note: Weights:<br>Pos. Business Set.: 0.5<br>Pos. Risk Set.: 0.3<br>Pos. Management Sent.: 0.2<br><br>*Note: Scroll in text<br>area to see all summaries.'
+                          }
+                      }
+                   };
 
-                    Plotly.newPlot('sentimentChart', [trace1, trace2, trace3], layout);
+                   Plotly.newPlot('sentimentChart', [trace1, trace2, trace3], layout);
 
-                    // Update summary boxes on hover
-                    document.getElementById('sentimentChart').on('plotly_hover', function(eventData) {
-                        const year = eventData.points[0].x;
-                        const companies = ['AAPL', 'MSFT', 'AMZN'];
-                        const summaryTypes = ['Business Summary', 'Risk Summary', 'Management Summary'];
+                   // Display 2023 summaries initially
+                   const companies = ['AAPL', 'MSFT', 'AMZN'];
+                   const summaryTypes = ['Business Summary', 'Risk Summary', 'Management Summary'];
 
-                        companies.forEach((company, index) => {
-                            const container = document.getElementById(`${company.toLowerCase()}Summary`);
-                            let summaries = '';
-                            summaryTypes.forEach(summaryType => {
-                                const summaryText = data[company][year] && data[company][year][summaryType] ? data[company][year][summaryType]['Summary Text'] : 'No data';
-                                summaries += `<strong>${summaryType}:</strong> ${summaryText}<br><br>`;
-                            });
-                            container.innerHTML = `<h3>${company} Summaries for ${year}</h3>${summaries}`;
-                        });
-                    });
-                })
-                .catch(error => console.error('Error loading the data:', error));
-        });
-    </script>
-    <div class="summary-container" id="aaplSummary">
-        Apple Summaries
-    </div>
-    <div class="summary-container" id="msftSummary">
-        Microsoft Summaries
-    </div>
-    <div class="summary-container" id="amznSummary">
-        Amazon Summaries
-    </div>
+                   companies.forEach(company => {
+                       const container = document.getElementById(`${company.toLowerCase()}Summary`);
+                       let summaries = '';
+                       summaryTypes.forEach(summaryType => {
+                           const summaryText = data[company]['2023'] && data[company]['2023'][summaryType] ? data[company]['2023'][summaryType]['Summary Text'] : 'No data';
+                           summaries += `<strong>${summaryType}:</strong> ${summaryText}<br><br>`;
+                       });
+                       container.innerHTML = `<h3>${company} Summaries for 2023</h3>${summaries}`;
+                   });
+
+                   // Update summary boxes on hover
+                   document.getElementById('sentimentChart').on('plotly_hover', function(eventData) {
+                       const year = eventData.points[0].x;
+                       companies.forEach((company, index) => {
+                           const container = document.getElementById(`${company.toLowerCase()}Summary`);
+                           let summaries = '';
+                           summaryTypes.forEach(summaryType => {
+                               const summaryText = data[company][year] && data[company][year][summaryType] ? data[company][year][summaryType]['Summary Text'] : 'No data';
+                               summaries += `<strong>${summaryType}:</strong> ${summaryText}<br><br>`;
+                           });
+                           container.innerHTML = `<h3>${company} Summaries for ${year}</h3>${summaries}`;
+                       });
+                   });
+               })
+               .catch(error => console.error('Error loading the data:', error));
+       });
+   </script>
+   <div class="summary-container" id="aaplSummary">
+       Apple Summaries
+   </div>
+   <div class="summary-container" id="msftSummary">
+       Microsoft Summaries
+   </div>
+   <div class="summary-container" id="amznSummary">
+       Amazon Summaries
+   </div>
 </body>
 </html>

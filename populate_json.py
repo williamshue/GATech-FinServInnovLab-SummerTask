@@ -23,6 +23,7 @@ def popjson(root_dir):
             # ## 0: all, 1: business description, 2: risk, 3: management discussion and analysis.
             # ## overall_sum = get_summary(parse_10K.parse_10k_filing(filepath, 0))
             try:
+                print(filepath)
                 biz_sum = inf_api_caller.get_summary(parse_10K.parse_10k_filing(filepath, 1))
             except:
                 biz_sum = [{'summary_text': 'no data'}]
@@ -36,6 +37,7 @@ def popjson(root_dir):
                 mgmt_sum = inf_api_caller.get_summary(parse_10K.parse_10k_filing(filepath, 3))
             except:
                 mgmt_sum = [{'summary_text': 'no data'}]
+            print("here")
 
             time.sleep(2)
 
