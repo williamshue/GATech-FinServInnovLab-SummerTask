@@ -3,25 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Sentiment Analysis Over the Years</title>
+    <title>SEC 10-K Filings Insight Analysis Dashboard</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        .chart-container {
-            width: 1500px;
-            height: 1000px;
-        }
-    </style>
+      body, html {
+          height: 100%;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          background-color: #f0f0f0; /* Light grey background */
+          font-family: Helvetica, Arial, sans-serif;
+          font-weight: 300; /* Added font-weight for thin appearance */
+      }
+      .chart-container {
+          width: 1500px;
+          height: 1000px;
+      }
+      .summary-container {
+          border-radius: 25px;
+          border: 2px solid gray;
+          padding: 10px;
+          width: 1500px;
+          height: 150px;
+          overflow-y: auto;
+          margin-bottom: 10px;
+      }
+      .summary-container h3 {
+          font-size: 18px;
+          margin: 0 0 5px;
+          font-weight: 400; /* Added font-weight for h3 */
+      }
+      .summary-container p {
+          font-size: 16px;
+          margin: 0;
+      }
+  </style>
+  </style>
 </head>
 <body>
-    <h1>Business Sentiment Analysis Over the Years</h1>
+    <h1>SEC 10-K Filings Insight Analysis Dashboard</h1>
     <div class="chart-container" id="sentimentChart"></div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -86,28 +108,45 @@
                     };
 
                     const layout = {
-                        title: 'Sentiment Analysis Over the Years',
+                        title: 'Weighted average of SEC 10-K Filing Summaries 1995-2023',
                         xaxis: {
                             title: 'Year'
                         },
                         yaxis: {
-                            title: 'Combined Positive Sentiment Score'
+                            title: 'Weighted average of Positive Sentiment for SEC 10-K Filing Summaries'
                         }
                     };
 
                     Plotly.newPlot('sentimentChart', [trace1, trace2, trace3], layout);
+
+                    // Update summary boxes on hover
+                    document.getElementById('sentimentChart').on('plotly_hover', function(eventData) {
+                        const year = eventData.points[0].x;
+                        const companies = ['AAPL', 'MSFT', 'AMZN'];
+                        const summaryTypes = ['Business Summary', 'Risk Summary', 'Management Summary'];
+
+                        companies.forEach((company, index) => {
+                            const container = document.getElementById(`${company.toLowerCase()}Summary`);
+                            let summaries = '';
+                            summaryTypes.forEach(summaryType => {
+                                const summaryText = data[company][year] && data[company][year][summaryType] ? data[company][year][summaryType]['Summary Text'] : 'No data';
+                                summaries += `<strong>${summaryType}:</strong> ${summaryText}<br><br>`;
+                            });
+                            container.innerHTML = `<h3>${company} Summaries for ${year}</h3>${summaries}`;
+                        });
+                    });
                 })
                 .catch(error => console.error('Error loading the data:', error));
         });
     </script>
-    <div style="border-radius: 25px; border: 2px solid gray; padding: 20px; width: 200px; height: 150px;">
-        Text area
+    <div class="summary-container" id="aaplSummary">
+        Apple Summaries
     </div>
-    <div style="border-radius: 25px; border: 2px solid gray; padding: 20px; width: 200px; height: 150px;">
-      Text area
+    <div class="summary-container" id="msftSummary">
+        Microsoft Summaries
     </div>
-    <div style="border-radius: 25px; border: 2px solid gray; padding: 20px; width: 200px; height: 150px;">
-      Text area
+    <div class="summary-container" id="amznSummary">
+        Amazon Summaries
     </div>
 </body>
 </html>
