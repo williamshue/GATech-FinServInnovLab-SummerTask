@@ -12,17 +12,25 @@ This project was developed by William Shue, the dashboard can be used at: [https
 I used the following tech stack to develop the web application. I selected the tools becuase I was familiar with them, they allowed efficent deployment of a lightweight web app which allowed for easily visualizing/interacting with the insights obtained leveraging the LLMs accessed via Hugging Face's Inference API.
 
 ### Backend:
-**Python Scripts** which fetch data using the SEC EDGAR Downloader, clearn and orgainze the data, and make calls to Hugging Face via the inference API in order to get insights on the data; then storing everything in an orgainzed fashion in the data store.
+**Python Scripts** which fetch data using the SEC EDGAR Downloader, clearn and orgainze the data, and make calls to **Hugging Face LLMs via the inference API** in order to get insights on the data; then storing everything in an orgainzed fashion in the data store.
 
 ### Datastore:
 **The data.json file** which is modified and updated via the python scripts to allow for processing/visualizing data.
 
 ### Front End: 
-**The index.html** document with contains vanilla **Java Script for allowing the webpage to be interactive** and **CSS for styling the webpage**.
+**The index.html** document with contains vanilla **Java Script for allowing the webpage to be interactive** and **CSS for styling the webpage**. **Github pages was used for hosting**.
 
 ## How The Application Works
 
-1. main.py calls the 
+1. main.py calls the sec_10k_fetcher.py which obtains all SEC 10K filings for Apple, Microsoft and Amazon from 1995 to 2023.
+2. main.py then calls populate_json.py 
+3. populate_json.py then does the following for all filings obtained
+- calls parse_10k.py to (clean/extract) get the plain text entries for three different sections of the 10k filings in question (blue line)
+- uses an LLM to get a summary of the section of the filing via Hugging Faces inference API (blue line)
+- uses a sentiment analyzer to get the sentiment of the summary via Hugging Faces inference API (purple line)
+- Populates the data.json file with the text summaries extracted and the sentiment scores (purple line)
+4. sorter.py sorts the json entries by company and year so they can appear sequentially in the webapp, this is becuase edgar doesn't download them in a stored sequential fashion
+5. the html file with JS and css inside serve the webapp to the webapge hosted on github pages.
 
 ![Alt Text](flow.png)
 
