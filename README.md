@@ -1,11 +1,12 @@
 # SEC 10K Filings Insight Analysis Dashboard
 
-### TLDR:
 Link to dashboard: [https://williamshue.net/SEC_10K_Filings_Insight_Analysis_Dashboard/](https://williamshue.net/SEC_10K_Filings_Insight_Analysis_Dashboard/).
 
 *Why a user would care about this insight:* 
 
 Positive weighted average of sentiment scores from SEC 10-K filings provide an indication of overall positive sentiment in a company's health.
+
+Hugging Face was used becuase it was easy to use the free teir, however this required that text needed to be summarized and quantified with sentiment due to context window limitations. 
 
 ### Summary
 
