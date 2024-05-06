@@ -1,70 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<style>
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Sentiment Analysis Over the Years</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .chart-container {
+            width: 1500px;
+            height: 1000px;
+        }
+    </style>
 </head>
 <body>
+    <h1>Business Sentiment Analysis Over the Years</h1>
+    <div class="chart-container" id="sentimentChart"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('data.json')
+                .then(response => response.json())
+                .then(data => {
+                    const years = [];
+                    const aaplCombined = [];
+                    const msftCombined = [];
+                    const amznCombined = [];
 
-<h1 style="width:100%;max-width:700px;margin:0 auto;color:grey;font-weight: 1%;">SEC 10-K Filings Insight Analysis Dashboard</h1>
-<div id="myPlot" style="width:100%;max-width:700px;margin:0 auto;"></div>
-<div id="info" style="width:100%;max-width:600px;margin:20px auto;border-radius:10px;border:2px solid #000;padding:10px;"></div>
+                    // Define weights for each summary
+                    const weights = {
+                        'Business Summary': 0.5,
+                        'Risk Summary': 0.3,
+                        'Management Summary': 0.2
+                    };
 
-<script>
-fetch('data.json')
-.then(response => response.json())
-.then(data => {
-    const years = Object.keys(data.C1);
-    const stockPricesC1 = years.map(year => parseFloat(data.C1[year].stock_price.replace('$', '')));
-    const stockPricesC2 = years.map(year => parseFloat(data.C2[year].stock_price.replace('$', '')));
-    const eventsC1 = years.map(year => `${year}: ${data.C1[year].text}`);
-    const eventsC2 = years.map(year => `${year}: ${data.C2[year].text}`);
+                    // Calculate combined sentiment for each company and each year
+                    const calculateCombinedSentiment = (companyData) => {
+                        const combinedData = [];
+                        Object.keys(companyData).forEach(year => {
+                            const yearData = companyData[year];
+                            let combinedPositive = 0;
+                            Object.keys(yearData).forEach(summary => {
+                                const sentiment = yearData[summary];
+                                combinedPositive += sentiment['Positive Sentiment'] * weights[summary];
+                            });
+                            combinedData.push(combinedPositive);
+                        });
+                        return combinedData;
+                    };
 
-    const trace1 = {
-      x: years,
-      y: stockPricesC1,
-      mode: "lines+markers",
-      name: 'Company 1',
-      type: 'scatter'
-    };
+                    // Extracting combined sentiment data for Apple, Microsoft, Amazon
+                    years.push(...Object.keys(data.AAPL));
+                    aaplCombined.push(...calculateCombinedSentiment(data.AAPL));
+                    msftCombined.push(...calculateCombinedSentiment(data.MSFT));
+                    amznCombined.push(...calculateCombinedSentiment(data.AMZN));
 
-    const trace2 = {
-      x: years,
-      y: stockPricesC2,
-      mode: "lines+markers",
-      name: 'Company 2',
-      type: 'scatter'
-    };
+                    const trace1 = {
+                        x: years,
+                        y: aaplCombined,
+                        mode: 'lines+markers',
+                        name: 'AAPL Combined Positive Sentiment',
+                        line: {color: 'rgb(255, 99, 132)'}
+                    };
 
-    const dataPlot = [trace1, trace2];
+                    const trace2 = {
+                        x: years,
+                        y: msftCombined,
+                        mode: 'lines+markers',
+                        name: 'MSFT Combined Positive Sentiment',
+                        line: {color: 'rgb(54, 162, 235)'}
+                    };
 
-    const layout = {
-      xaxis: {title: "Year"},
-      yaxis: {title: "Stock Price ($)"},
-      title: "Stock Prices and Events by Year"
-    };
+                    const trace3 = {
+                        x: years,
+                        y: amznCombined,
+                        mode: 'lines+markers',
+                        name: 'AMZN Combined Positive Sentiment',
+                        line: {color: 'rgb(75, 192, 192)'}
+                    };
 
-    Plotly.newPlot("myPlot", dataPlot, layout);
+                    const layout = {
+                        title: 'Sentiment Analysis Over the Years',
+                        xaxis: {
+                            title: 'Year'
+                        },
+                        yaxis: {
+                            title: 'Combined Positive Sentiment Score'
+                        }
+                    };
 
-    const plotDiv = document.getElementById('myPlot');
-    plotDiv.on('plotly_hover', function(data){
-        const yearIndex = data.points[0].pointIndex;
-        const company = data.points[0].data.name;
-        let infoText = `<h2>${company}</h2>`;
-        if (company === "Company 1") {
-            infoText += `<p>${eventsC1[yearIndex]}</p>`;
-        } else {
-            infoText += `<p>${eventsC2[yearIndex]}</p>`;
-        }
-        document.getElementById('info').innerHTML = infoText;
-    })
-    .on('plotly_unhover', function(data){
-        document.getElementById('info').innerHTML = '';
-    });
-})
-.catch(error => console.error('Error loading the data:', error));
-</script>
-
+                    Plotly.newPlot('sentimentChart', [trace1, trace2, trace3], layout);
+                })
+                .catch(error => console.error('Error loading the data:', error));
+        });
+    </script>
+    <div style="border-radius: 25px; border: 2px solid gray; padding: 20px; width: 200px; height: 150px;">
+        Text area
+    </div>
+    <div style="border-radius: 25px; border: 2px solid gray; padding: 20px; width: 200px; height: 150px;">
+      Text area
+    </div>
+    <div style="border-radius: 25px; border: 2px solid gray; padding: 20px; width: 200px; height: 150px;">
+      Text area
+    </div>
 </body>
 </html>
