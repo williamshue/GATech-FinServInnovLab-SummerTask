@@ -1,5 +1,12 @@
 # SEC 10K Filings Insight Analysis Dashboard
 
+### TLDR:
+Link to dashboard: [https://williamshue.net/SEC_10K_Filings_Insight_Analysis_Dashboard/](https://williamshue.net/SEC_10K_Filings_Insight_Analysis_Dashboard/).
+
+*Why a user would care about this insight:* 
+
+Positive weighted average of sentiment scores from SEC 10-K filings provide an indication of overall positive sentiment in a company's health.
+
 ### Summary
 
 This project was developed by William Shue, the dashboard can be used at: [https://williamshue.net/SEC_10K_Filings_Insight_Analysis_Dashboard/](https://williamshue.net/SEC_10K_Filings_Insight_Analysis_Dashboard/).
@@ -30,7 +37,7 @@ I used the following tech stack to develop the web application. I selected the t
 - uses a sentiment analyzer to get the sentiment of the summary via Hugging Faces inference API (purple line)
 - Populates the data.json file with the text summaries extracted and the sentiment scores (purple line)
 4. sorter.py sorts the json entries by company and year so they can appear sequentially in the webapp, this is becuase edgar doesn't download them in a stored sequential fashion
-5. the html file with JS and css inside serve the webapp to the webapge hosted on github pages.
+5. the html file with JS and css inside serve the webapp to the webapge hosted on github pages (the weighted averages of the sentiment scores are calculated here as well)
 
 ![Alt Text](flow.png)
 
